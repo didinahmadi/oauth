@@ -4,6 +4,12 @@ $dsn      = 'mysql:dbname=oauth2;host=localhost';
 $username = 'root';
 $password = 'secret';
 
+if ($_SERVER['SERVER_NAME'] == 'oauth.didin.click') {
+	$dsn      = 'mysql:dbname=oauth;host=localhost';
+	$username = 'root';
+	$password = 'boboboi';	
+}
+
 // error reporting (this is a demo, after all!)
 ini_set('display_errors',1);error_reporting(E_ALL);
 
