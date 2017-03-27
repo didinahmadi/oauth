@@ -6,6 +6,6 @@
 	// $client_secret = 'testpass';
 
 	$api = new GoingupApi($client_id,$client_secret);
-	$api->apiBaseUrl = 'https://affilify.didin/api';
+	$api->apiBaseUrl = 'https://affilify.net/api';
 
 ?>
