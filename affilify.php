@@ -6,7 +6,7 @@ require_once('config.php');
 
 ?>
 
-<a href="<?php echo $api->getLoginUrl('code', 'cde', 'eticket', 'yes', '2', 'https://client.oauth.didin/affilify.php'); ?>">Login</a>
+<a href="<?php echo $api->getLoginUrl('code', 'cde', 'eticket', 'yes', '2', null); ?>">Login</a>
 
 <?php 
 $authCode = isset($_REQUEST['code']) ? $_REQUEST['code'] : null;
