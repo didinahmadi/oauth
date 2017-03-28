@@ -5,6 +5,10 @@ require_once('config.php');
 
 $redirect = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'] .'/affilify.php';
 
+echo '<code>';
+echo $redirect;
+echo '</code>';
+
 ?>
 
 <a href="<?php echo $api->getLoginUrl('code', 'cde', 'eticket', 'yes', '2', $redirect); ?>">Login</a>
