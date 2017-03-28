@@ -20,6 +20,9 @@ if ($authCode) {
 <?php 
 
 	$response = $api->getToken($authCode, $_REQUEST['state']);
+
+	var_dump($response);
+	die;
 	$r = json_decode($response);
 
 	if (!isset($r->access_token)){
