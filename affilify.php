@@ -21,12 +21,11 @@ if ($authCode) {
 
 	$response = $api->getToken($authCode, $_REQUEST['state']);
 
-	var_dump($response);
-	die;
+
 	$r = json_decode($response);
 
 	if (!isset($r->access_token)){
-		var_dump($r);
+		var_dump($response);		
 		die("error");
 	} else {
 		echo '<pre>';

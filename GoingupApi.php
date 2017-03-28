@@ -98,10 +98,10 @@ class GoingupApi {
 		//$headers['Content-type'] = 'application/x-www-form-urlencoded';
 		curl_setopt($this->ch, CURLOPT_POSTFIELDS, http_build_query($params));	
 		curl_setopt($this->ch, CURLOPT_HTTPHEADER, $headers);	
-		if ($_SERVER['REQUEST_SCHEME']=='https') {
+		// if ($_SERVER['REQUEST_SCHEME']=='https') {
 			curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST, 0);
 			curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, 0);	
-		}
+		// }
 		curl_setopt($this->ch, CURLOPT_POST, 1);		
 		curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, 1); 
 		// curl_setopt($this->ch, CURLOPT_USERPWD, $this->appId.":".$this->secret);
@@ -146,10 +146,10 @@ class GoingupApi {
 			}
 		}
 
-		if ($_SERVER['REQUEST_SCHEME']=='https') {
+		// if ($_SERVER['REQUEST_SCHEME']=='https') {
 			curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST, 0);
 			curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, 0);
-		}
+		// }
 
 		curl_setopt($this->ch, CURLOPT_URL, $url); 	
 		curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, 1); 
