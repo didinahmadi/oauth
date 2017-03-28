@@ -12,7 +12,7 @@ require_once('config.php');
 $authCode = isset($_REQUEST['code']) ? $_REQUEST['code'] : null;
 $refreshToken = isset($_REQUEST['refreshToken']) ? $_REQUEST['refreshToken'] : null;
 $state = isset($_REQUEST['state']) ? $_REQUEST['state'] : null;
-if ($authCode) :
+if ($authCode) {
 ?>
 
 <h1>API REQUEST RESULT</h1>
@@ -38,26 +38,4 @@ if ($authCode) :
 
 
 ?>
-<?php else: ?>
-
-	<?php if ($refreshToken): ?>
-		<?php 
-
-			if ($response = $api->refreshToken($refreshToken, $_REQUEST['state'])) {
-				$r = json_decode($response);
-				$resutl = $api->request(
-					$api->apiBaseUrl . '/v1/affiliates',
-					array(
-						'access_token' => $r->access_token
-					),
-					'GET'
-				);
-
-				echo '<pre>';
-				print_r($resutl);
-				echo '</pre>';
-			}
-
-		?>
-	<?php endif; ?>
-<?php endif; ?>
+<?php } ?>
