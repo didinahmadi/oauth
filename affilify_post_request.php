@@ -18,19 +18,35 @@ require_once('config.php');
 	// 	'POST'
 	// );
 
-	$resutl = $api->post($endpoint, array(
+	$postresult = $api->post($endpoint, array(
 		'access_token' => $accessToken
 	));
 
+	
+
 
 	echo '<code>';
+	echo "<h3>CURL COMMAND POST</h3>";
 	echo 'curl -u '.$client_id.':'.$client_secret . ' ' . $endpoint . ' -d \'access_token='.$accessToken.'\'';
 	echo '</code>';
 	echo '<pre>';
-	echo 'ENDPOINT => ';
-	echo print_r($endpoint);
+	
 	echo '<hr />';
-	var_dump($resutl);
+	echo '<h3>API RESULT IN JSON FORMAT POST REQUEST</h3>';
+	echo '<code>';
+	print_r($postresult);
+	echo '</code>';
+	echo '<hr />';
+
+	$getresult = $api->request($endpoint, array(
+		'access_token' => $accessToken
+	));
+
+	echo '<h3>API RESULT IN JSON FORMAT GET REQUEST</h3>';
+	echo '<h3>List affiliates</h3>';
+	echo '<code>';
+	print_r($getresult);
+	echo '</code>';
 	echo '<hr />';
 
 	echo '<a href="affilify_post_with_refresh_token.php?refresh=true&refreshToken='.$refreshToken.'&state='. $state .'">Request by refresh token</a>';
