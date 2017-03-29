@@ -24,7 +24,7 @@ if ($authCode) {
 	$r = json_decode($response);
 
 	if (!isset($r->access_token)){
-		var_dump($r);
+		var_dump($response);
 		die("error");
 	} else {
 		echo '<pre>';
