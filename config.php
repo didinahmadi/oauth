@@ -8,6 +8,12 @@
 	// $client_secret = 'testpass';
 
 	$api = new GoingupApi($client_id,$client_secret);
-	$api->apiBaseUrl = 'https://affilify.net/api';
+
+	if ($_SERVER['SERVER_NAME'] == 'affilify.net') {
+		$api->apiBaseUrl = 'https://affilify.net/api';	
+	} else {
+		$api->apiBaseUrl = 'https://affilify.didin/api';	
+	}
+	
 
 ?>
