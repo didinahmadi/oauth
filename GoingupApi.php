@@ -158,9 +158,16 @@ class GoingupApi {
 		if (false==$result) {
 			$result = "ERROR : ".curl_error($this->ch);
 		}
+
+		$header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+		$this->header['header'] = substr($response, 0, $header_size);
+		$this->header['body'] = substr($response, $header_size);
+
 		curl_close($this->ch);
 		return $result;
 	}
+
+	public $header = [];
 
 
 }

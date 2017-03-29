@@ -21,10 +21,18 @@ if ($authCode) {
 <?php 
 
 	$response = $api->getToken($authCode, $_REQUEST['state']);
+	echo '<h5>HEADER</h5><pre>';
+	print_r($api->headers);
+	echo '</pre>';
+	echo '<hr />';
+
 	$r = json_decode($response);
 
 	if (!isset($r->access_token)){
+		echo '<pre>';
+
 		var_dump($response);
+		echo '</pre>';
 		die("error");
 	} else {
 		echo '<pre>';
