@@ -22,7 +22,7 @@ if ($authCode) {
 
 	$response = $api->getToken($authCode, $_REQUEST['state']);
 	echo '<h5>HEADER</h5><pre>';
-	print_r($api->headers);
+	print_r($api->header);
 	echo '</pre>';
 	echo '<hr />';
 

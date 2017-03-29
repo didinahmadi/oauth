@@ -117,6 +117,7 @@ class GoingupApi {
 		return $result;
 	}
 
+	public $header = array();
 
 	public function request($url, $params = array(), $method = 'GET')
 	{
@@ -157,17 +158,18 @@ class GoingupApi {
 		
 		if (false==$result) {
 			$result = "ERROR : ".curl_error($this->ch);
+			die;
 		}
 
-		$header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
-		$this->header['header'] = substr($response, 0, $header_size);
-		$this->header['body'] = substr($response, $header_size);
+		$header_size = curl_getinfo($this->ch, CURLINFO_HEADER_SIZE);
+		$this->header['header'] = substr($result, 0, $header_size);
+		$this->header['body'] = substr($result, $header_size);
 
 		curl_close($this->ch);
 		return $result;
 	}
 
-	public $header = [];
+	
 
 
 }

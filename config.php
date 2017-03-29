@@ -8,7 +8,7 @@
 
 	$api = new GoingupApi($client_id,$client_secret);
 
-	if ($_SERVER['SERVER_NAME'] == 'affilify.didin') {
+	if ($_SERVER['SERVER_NAME'] == 'client.oauth.didin') {
 		$api->apiBaseUrl = 'https://affilify.didin/api';
 	} else {
 		$api->apiBaseUrl = 'https://affilify.net/api';				
